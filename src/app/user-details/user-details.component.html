@@ -1,0 +1,21 @@
+<div *ngIf="user">
+  <div>
+    <label>Name: </label> {{user.name}}
+  </div>
+  <div>
+    <label>Email: </label> {{user.email}}
+  </div>
+  <div>
+    <label>Type: </label> {{user.usertype}}
+  </div>
+
+  <span class="button is-small btn-primary" *ngIf='user.usertype' (click)='updateStatus(1)'>Admin</span>
+
+  <span class="button is-small btn-primary" *ngIf='!user.usertype' (click)='updateStatus(2)'>PowerUser</span>
+
+  <span class="button is-small btn-primary" *ngIf='!user.usertype' (click)='updateStatus(3)'>User</span>
+
+  <span class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</span>
+
+  <hr />
+</div>
